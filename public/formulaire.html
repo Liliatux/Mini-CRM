@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.css">
+	<link rel="stylesheet" href="node_modules/semantic-ui-css/semantic.min.css">
 	<meta charset="UTF-8">
 	<title>Informations</title>
 </head>
 <body>
-	<form class="ui form">
+	<a href="/index.html" class="ui button">CRM</a>
+
+	<form class="ui form" id="form" action="/crm" method="post">
 		<h4 class="ui dividing header">Informations</h4>
 		<div class="two fields">
 			<div class="field">
 				<label for="first_name">Prénom</label>
-				<input type="text" id="firstName" placeholder="prénom">
+				<input type="text" id="firstName" placeholder="prenom">
 			</div>
 			<div class="field">
 				<label for="last_name">Nom</label>
@@ -29,10 +33,11 @@
 			<label for="description">Description</label>
 			<textarea id="description" cols="30" rows="10"></textarea>
 		</div>
-		<button class="ui button" id="submit">Envoyer</button>
+		<button class="ui button" id="send">Envoyer</button>
 	</form>
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/sweetalert2/dist/sweetalert2.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>

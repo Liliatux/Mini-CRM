@@ -7,6 +7,7 @@
 
 		init: function(){
 			this.ajaxCrm();
+			this.listener();
 		},
 
 		ajaxCrm : function(){
@@ -24,6 +25,39 @@
 					$("#"+i).append("<li>"+k+ ':' + ' ' +crmData[i][k]+"</li>");
 				}
 			}
+		},
+
+		listener: function(){
+			$("#send").on('submit', this.form.bind(this));
+		},
+
+		form: function(event){
+			event.preventDefault();
+			var firstName = $("#firstName").val();
+			var lastName = $("#lastName").val();
+			var phone = $("#phone").val();
+			var mail = $("#mail").val();
+			var description = $("textarea").val();
+			app.ajaxForm({first_name: firstName, last_name: lastName, phone: phone, mail: mail, description: description});
+		},
+
+		ajaxForm: function(data){
+			$.ajax({
+				type: "POST",
+				url: $("#form").attr("action"),
+				data: data,
+				success: this.success
+			});
+		},
+
+		success: function(){
+			swal({
+				title: "Envoyé !",
+				text: "Merci de nous avoir fourni vos données",
+				type: "success",
+				confirmButtonText: "Back"
+			});
+			$("#form").trigger("reset");
 		}
 	}
 
