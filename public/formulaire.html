@@ -9,7 +9,7 @@
 <body>
 	<a href="/index.html" class="ui button">CRM</a>
 
-	<form class="ui form" id="form" action="/crm" method="post">
+	<form class="ui form" id="form" action="/public/crm.json" method="post">
 		<h4 class="ui dividing header">Informations</h4>
 		<div class="two fields">
 			<div class="field">
@@ -33,8 +33,8 @@
 			<label for="description">Description</label>
 			<textarea id="description" cols="30" rows="10"></textarea>
 		</div>
-		<button class="ui button" id="send">Envoyer</button>
 	</form>
+	<button class="ui button" id="send">Envoyer</button>
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/sweetalert2/dist/sweetalert2.js"></script>

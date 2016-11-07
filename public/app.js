@@ -10,6 +10,7 @@
 			this.listener();
 		},
 
+		//Récupération des données du crm.json
 		ajaxCrm : function(){
 			$.ajax(this.urlCrm)
 			.done(this.ajaxDoneCrm)
@@ -17,6 +18,7 @@
 			.always();
 		},
 
+		//Affichage des données du crm
 		ajaxDoneCrm: function(crm){
 			var crmData = crm.customers;
 			for(var i = 0; i < crmData.length; i++){
@@ -27,10 +29,12 @@
 			}
 		},
 
+		//Envoie du formulaire
 		listener: function(){
-			$("#send").on('submit', this.form.bind(this));
+			$("#send").on('click', this.form.bind(this));
 		},
 
+		//Récupération des données du formulaire
 		form: function(event){
 			event.preventDefault();
 			var firstName = $("#firstName").val();
@@ -41,6 +45,7 @@
 			app.ajaxForm({first_name: firstName, last_name: lastName, phone: phone, mail: mail, description: description});
 		},
 
+		//Envoie au serveur des données du formulaire
 		ajaxForm: function(data){
 			$.ajax({
 				type: "POST",
@@ -50,6 +55,7 @@
 			});
 		},
 
+		//Si réussi affiche une swal
 		success: function(){
 			swal({
 				title: "Envoyé !",
