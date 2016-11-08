@@ -13,8 +13,9 @@ var crm = {
 		var urlCrm = __dirname + '/public/crm.json';
 		fs.readFile(urlCrm, 'utf8', function(err, data){
 			var content = JSON.parse(data);
-			content.customers.push({first_name: post.first_name, last_name: post.last_name, phone: post.phone, mail: post.mail, description: post.description});			
+			content.customers.push({first_name: post.first_name, last_name: post.last_name, phone: post.phone, email: post.email, description: post.description});
 			var jsonStrig = JSON.stringify(content);
+			
 			fs.writeFile(urlCrm, jsonStrig, function(err){
 				if(err){
 					console.log(err);
@@ -26,6 +27,6 @@ var crm = {
 	
 }
 
-app.post('/public/crm.json', crm.updateJson);
+app.post('/public', crm.updateJson);
 
 app.listen(2314);
