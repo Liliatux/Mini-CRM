@@ -21,9 +21,9 @@
 		ajaxDoneCrm: function(crm){
 			var crmData = crm.customers;
 			for(var i = 0; i < crmData.length; i++){
-				$("#crm").append("<ul id="+i+"></ul>");
+				$("#crm").append("<tr id="+i+"></tr>");
 				for(var k in crmData[i]){
-					$("#"+i).append("<li>"+k+ ':' + ' ' +crmData[i][k]+"</li>");
+					$("#"+i).append("<td>"+crmData[i][k]+"</td>");
 				}
 			}
 		}

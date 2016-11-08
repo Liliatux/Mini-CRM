@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<link rel="stylesheet" href="node_modules/semantic-ui-css/semantic.min.css">
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Mini-CRM</title>
+</head>
+<body>
+	<div class="ui top attached tabular menu">
+		<a href="/index.html" class="item">Formulaire</a>		
+		<a href="/crmData.html" class="active item">CRM</a>
+	</div>
+	<table class='ui celled striped table'>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Prénom</th>
+				<th>Nom</th>
+				<th>Entreprise</th>
+				<th>Fonction</th>
+				<th>Téléphone</th>
+				<th>Adresse Mail</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody id="crm"></tbody>
+	</table>
+	
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
