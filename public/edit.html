@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="node_modules/semantic-ui-css/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<title>Informations</title>
+</head>
+<body>
+	<div class="ui top attached tabular menu">
+		<a href="/crmData.html" class="item">CRM</a>
+		<a href="/index.html" class="item">Nouveau formulaire</a>
+		<a href="/edit.html" class="active item">Edition du formulaire</a>			
+	</div>
+	<form class="ui form" action="/crm.json" method="get">
+		<h4 class="ui dividing header">Edition</h4>
+		<div class="ui compact menu">
+			<div class="ui field">
+				<div class="ui simple dropdown item">
+					Editer
+					<i class="dropdown item"></i>
+					<div class="menu">
+						<div class="item">Test</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<form class="ui form" id="form" action="/public" method="post">
+		<h4 class="ui dividing header">Informations</h4>
+		<div class="ui field">
+			<input type="hidden" name="id" value="">
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<label for="first_name">Prénom</label>
+				<input type="text" name="first_name" placeholder="prenom" id="first_name">
+			</div>
+			<div class="field">
+				<label for="last_name">Nom</label>
+				<input type="text" name="last_name" placeholder="nom" id="last_name">
+			</div>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<label for="company">Entreprise</label>
+				<input type="text" name="company" placeholder="prenom" id="company">
+			</div>
+			<div class="field">
+				<label for="role">Fonction</label>
+				<input type="text" name="role" placeholder="nom" id="role">
+			</div>
+		</div>
+		<div class="field">
+			<label for="phone">Numéro de téléphone</label>
+			<input type="text" name="phone" placeholder="numero" id="phone">
+		</div>
+		<div class="field">
+			<label for="email">Adresse Mail</label>
+			<input type="text" name="email" placeholder="mail" id="email">
+		</div>
+		<div class="field">
+			<label for="description">Description</label>
+			<textarea name="description" cols="30" rows="10" id="description"></textarea>
+		</div>
+		<button class="ui button green labeled icon" type="submit">
+			<i class="icon send"></i>
+			Envoyer
+		</button>
+	</form>
+
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
