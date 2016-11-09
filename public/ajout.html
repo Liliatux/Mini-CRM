@@ -1,30 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<link rel="stylesheet" href="node_modules/semantic-ui-css/semantic.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="style.css">
 	<meta charset="UTF-8">
-	<title>Informations</title>
+	<title>Mini-CRM</title>
 </head>
 <body>
 	<div class="ui top attached tabular menu">
 		<a href="/index.html" class="item">CRM</a>
-		<a href="/ajout.html" class="item">Nouveau formulaire</a>
-		<a href="/edit.html" class="active item">Edition du formulaire</a>			
+		<a href="/ajout.html" class="active item">Nouveau formulaire</a>
+		<a href="/edit.html" class="item">Edition du formulaire</a>			
 	</div>
-
-	<form class="ui form" action="/crm.json" method="get">
-		<h4 class="ui dividing header">Edition</h4>
-		<div class="field">
-			<label for="select">Selectionnez votre profil à éditer</label>
-			<select class="ui dropdown" name="select" id="select"></select>
-		</div>
-	</form>
 
 	<form class="ui form" id="form" action="/public" method="post">
 		<h4 class="ui dividing header">Informations</h4>
 		<div class="ui field">
-			<input type="hidden" name="_method" value="PUT">
+			<input type="hidden" name="_method" value="POST">
 		</div>
 		<div class="two fields">
 			<div class="field">

@@ -22,6 +22,7 @@
 			var crmData = crm.customers;
 			for(var i = 0; i < crmData.length; i++){
 				$("#crm").append("<tr id="+i+"></tr>");
+				$("select").append("<option value="+i+">"+crmData[i].first_name+ ' ' +crmData[i].last_name+"</option>");
 				for(var k in crmData[i]){
 					$("#"+i).append("<td>"+crmData[i][k]+"</td>");
 				}
